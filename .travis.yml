@@ -9,14 +9,14 @@ script:
   - docker run -e CI=true nextt-test/react-test npm test
 
 after_success:
-  - docker build -t nextt-test/multi-client ./client
-  - docker build -t nextt-test/multi-nginx ./nginx
-  - docker build -t nextt-test/multi-server ./server
-  - docker build -t nextt-test/multi-worker ./worker
+  - docker build -t jordinextt/multi-client ./client
+  - docker build -t jordinextt/multi-nginx ./nginx
+  - docker build -t jordinextt/multi-server ./server
+  - docker build -t jordinextt/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take thos images and push them to docker hub
-  - docker push nextt-test/multi-client
-  - docker push nextt-test/multi-nginx
-  - docker push nextt-test/multi-server
-  - docker push nextt-test/multi-worker
+  - docker push jordinextt/multi-client
+  - docker push jordinextt/multi-nginx
+  - docker push jordinextt/multi-server
+  - docker push jordinextt/multi-worker
