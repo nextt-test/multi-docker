@@ -1,0 +1,9 @@
+{
+  "AWS": [
+    "Database": [
+      "database": "fibvalues",
+      "username": "postgres",
+      "password": "postgrespassword"
+    ]
+  ]
+}
